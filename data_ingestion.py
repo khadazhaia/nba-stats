@@ -12,4 +12,6 @@ for file in file_list:
     df = pd.read_csv(file)
     merged_df = pd.concat([merged_df, df], ignore_index=True)
 
+merged_df.set_index("Year", inplace = True)
+    
 merged_df.to_csv("data/player_stats/merged2000-2024.csv")
